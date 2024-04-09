@@ -1,0 +1,150 @@
+[
+  {
+    "estate_id": 1,
+    "segment_name": "Penthouse",
+    "estate_title": "Luxury Penthouse with Stunning Views",
+    "image": "https://i.ibb.co/LkCd1mZ/1.jpg",
+    "description": "This exquisite penthouse offers breathtaking panoramic views of the city skyline. Featuring modern design and high-end amenities, it's perfect for those seeking the ultimate luxury living experience.",
+    "price": "$5,000,000",
+    "status": "For Sale",
+    "area": "3000 sq ft",
+    "location": "10 West St, New York, NY 10004",
+    "facilities": [
+      "Spacious living room",
+      "Infinity pool",
+      "Gourmet kitchen",
+      "Private terrace"
+    ]
+  },
+  {
+    "estate_id": 2,
+    "segment_name": "Beachfront Property",
+    "estate_title": "Exclusive Beachfront Villa",
+    "image": "https://i.ibb.co/M6pzTC4/2.jpg",
+    "description": "This stunning beachfront villa offers direct access to pristine white sands and crystal-clear waters. With luxurious interiors and expansive outdoor spaces, it's an ideal retreat for those who love beach living.",
+    "price": "$8,500,000",
+    "status": "For Sale",
+    "area": "5000 sq ft",
+    "location": "123 N Ocean Blvd, Palm Beach, FL 33480",
+    "facilities": [
+      "Private beach access",
+      "Outdoor pool",
+      "Sunset deck",
+      "Fitness center"
+    ]
+  },
+  {
+    "estate_id": 3,
+    "segment_name": "Resorts",
+    "estate_title": "Five-Star Resort & Spa",
+    "image": "https://i.ibb.co/MNvnCT2/3.jpg",
+    "description": "Experience unparalleled luxury and relaxation at this five-star resort & spa. Set amidst lush tropical gardens, it offers world-class amenities and personalized service for a truly unforgettable stay.",
+    "price": "$10,000,000",
+    "status": "For Rent",
+    "area": "10 acres",
+    "location": "1000 S Pointe Dr, Miami Beach, FL 33139",
+    "facilities": [
+      "Spa & wellness center",
+      "Fine dining restaurants",
+      "Tennis courts",
+      "Private villas"
+    ]
+  },
+  {
+    "estate_id": 4,
+    "segment_name": "Private Islands",
+    "estate_title": "Private Island Retreat",
+    "image": "https://i.ibb.co/ZcgCmth/4.jpg",
+    "description": "Escape to your own private paradise with this exclusive island retreat. Surrounded by turquoise waters and lush vegetation, it offers unrivaled privacy and seclusion for the discerning buyer.",
+    "price": "$15,000,000",
+    "status": "For Rent",
+    "area": "20 acres",
+    "location": "101 California St, San Francisco, CA 94111",
+    "facilities": ["Luxury villa", "Helipad", "Dive center", "Yacht dock"]
+  },
+  {
+    "estate_id": 5,
+    "segment_name": "Villas",
+    "estate_title": "Luxury Oceanfront Villa",
+    "image": "https://i.ibb.co/D1NNcgt/5.jpg",
+    "description": "Indulge in coastal luxury with this oceanfront villa featuring stunning sea views and contemporary design. With spacious interiors and outdoor living spaces, it's perfect for entertaining guests and family.",
+    "price": "$7,200,000",
+    "status": "For Sale",
+    "area": "4000 sq ft",
+    "location": "900 N Michigan Ave, Chicago, IL 60611",
+    "facilities": [
+      "Oceanfront terrace",
+      "Infinity-edge pool",
+      "Home theater",
+      "Wine cellar"
+    ]
+  },
+  {
+    "estate_id": 6,
+    "segment_name": "Mansions",
+    "estate_title": "Grand Mansion Estate",
+    "image": "https://i.ibb.co/WPwD8Jv/6.jpg",
+    "description": "Live in luxury with this grand mansion estate nestled amidst sprawling gardens and mature trees. With elegant interiors and extensive grounds, it offers the epitome of refined living.",
+    "price": "$12,000,000",
+    "status": "For Sale",
+    "area": "15,000 sq ft",
+    "location": "777 Brickell Ave, Miami, FL 33131",
+    "facilities": [
+      "Formal gardens",
+      "Tennis court",
+      "Guest wing",
+      "Staff quarters"
+    ]
+  },
+  {
+    "estate_id": 7,
+    "segment_name": "Penthouse",
+    "estate_title": "Modern Skyline Penthouse",
+    "image": "https://i.ibb.co/3BqV3dj/7.jpg",
+    "description": "Enjoy luxury living in this sleek and modern penthouse overlooking the city skyline. Featuring floor-to-ceiling windows, designer finishes, and state-of-the-art amenities, it offers the ultimate urban retreat.",
+    "price": "$6,800,000",
+    "status": "For Sale",
+    "area": "2500 sq ft",
+    "location": "1001 91st St, Bay Harbor Islands, FL 33154, Stati Uniti",
+    "facilities": [
+      "Open-concept living space",
+      "Private rooftop terrace",
+      "Fitness center",
+      "24/7 concierge"
+    ]
+  },
+  {
+    "estate_id": 8,
+    "segment_name": "Beachfront Property",
+    "estate_title": "Secluded Beachfront Estate",
+    "image": "https://i.ibb.co/jWfXjTV/8.jpg",
+    "description": "Escape to your own secluded paradise with this exclusive beachfront estate. Surrounded by lush vegetation and pristine sands, it offers unrivaled tranquility and luxury for those seeking a private retreat.",
+    "price": "$12,500,000",
+    "status": "For Sale",
+    "area": "6000 sq ft",
+    "location": "2000 Avenue of the Stars, Los Angeles, CA 90067",
+    "facilities": [
+      "Private beach access",
+      "Infinity pool",
+      "Poolside cabana",
+      "Outdoor kitchen"
+    ]
+  },
+  {
+    "estate_id": 9,
+    "segment_name": "Resorts",
+    "estate_title": "Luxury Mountain Resort",
+    "image": "https://i.ibb.co/wBxbsMh/9.jpg",
+    "description": "Discover the beauty of the mountains with this luxury resort nestled amidst alpine forests and snow-capped peaks. Offering world-class amenities and outdoor adventures, it's an ideal destination for year-round relaxation and recreation.",
+    "price": "$20,000,000",
+    "status": "For Rent",
+    "area": "50 acres",
+    "location": "1600 Pennsylvania Ave NW, Washington, DC 20500",
+    "facilities": [
+      "Ski-in/ski-out access",
+      "Spa & wellness center",
+      "Fine dining restaurants",
+      "Adventure concierge"
+    ]
+  }
+]
