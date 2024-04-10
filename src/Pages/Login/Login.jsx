@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -25,7 +26,10 @@ const Login = () => {
 
   return (
     <div>
-      <div>
+      <Helmet>
+        <title>Lux Houzez | Login</title>
+      </Helmet>
+      
         <h2 className="text-3xl my-10 text-center">Please Login</h2>
         <form onSubmit={handleLogin} className=" md:w-3/4 lg:w-1/2 mx-auto">
           <div className="form-control">
@@ -68,7 +72,7 @@ const Login = () => {
             Register
           </Link>
         </p>
-      </div>
+      
     </div>
   );
 };

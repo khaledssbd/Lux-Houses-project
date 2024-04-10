@@ -6,7 +6,6 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import LuxuryHouseDetail from '../Pages/LuxuryHouseDetail/LuxuryHouseDetail';
 
-
 const router = createBrowserRouter([
   {
     path: '/',

@@ -2,9 +2,9 @@
 
 ## Live site:
 
-- Click here- [Book Vibe on vercel](https://ph-a9-by-khaled.vercel.app/)
-- Click here- [Book Vibe on surge](https://ph-a9-by-khaled.surge.sh/)
-- Click here- [Book Vibe on netlify](https://ph-a9-by-khaled.netlify.app/)
+- Click here- [Lux Houzez on vercel](https://ph-a9-by-khaled.vercel.app/)
+- Click here- [Lux Houzez on surge](https://ph-a9-by-khaled.surge.sh/)
+- Click here- [Lux Houzez on netlify](https://ph-a9-by-khaled.netlify.app/)
 
 Features:
 

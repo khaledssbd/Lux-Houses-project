@@ -19,7 +19,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-200 rounded-xl">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,9 +45,12 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl md:text-3xl font-bold text-[#150B2B]">
+        <Link
+          to="/"
+          className="btn btn-ghost text-2xl md:text-3xl font-bold text-[#150B2B]"
+        >
           Lux Houzez
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>

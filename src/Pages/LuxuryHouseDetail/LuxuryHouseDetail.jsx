@@ -1,12 +1,12 @@
 import { useLoaderData, useParams } from 'react-router-dom';
 import { IoLocationOutline } from 'react-icons/io5';
+import { Helmet } from 'react-helmet-async';
 
 const LuxuryHouseDetail = () => {
   const allHouses = useLoaderData();
   const { estate_id: Id } = useParams();
   const house = allHouses.find(h => h.estate_id === parseInt(Id));
 
-  console.log(house);
   const {
     segment_name,
     estate_title,
@@ -21,6 +21,9 @@ const LuxuryHouseDetail = () => {
 
   return (
     <div className="mt-6 md:mt-11">
+      <Helmet>
+        <title>Lux Houzez | House Details: {Id}</title>
+      </Helmet>
       <div className="flex justify-center items-center mb-5 md:mb-10">
         <img
           className="min-h-[calc(100vh-160px)] rounded-2xl"
@@ -40,7 +43,7 @@ const LuxuryHouseDetail = () => {
             <button className="p-2 hover:text-[#131313] text-white bg-[#A58A56] rounded-sm text-start text-sm font-normal">
               Featured
             </button>
-            <button className="p-2 hover:text-[#131313] text-white bg-[#000000A6] rounded-sm text-start text-sm font-normal">
+            <button className="p-2 text-white bg-[#000000A6] rounded-sm text-start text-sm font-normal">
               {status}
             </button>
           </div>
@@ -89,14 +92,6 @@ const LuxuryHouseDetail = () => {
                 </h3>
               </div>
             </div>
-          </div>
-          <div className="flex gap-4 mt-8">
-            {/* <button
-            onClick={() => readBook(bookId)}
-            className="text-[#131313] text-base lg:text-lg font-semibold py-[8px] lg:py-[18px] px-[15px] lg:px-[28px] rounded-lg border"
-          >
-            Read
-          </button> */}
           </div>
         </div>
       </div>
