@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import downloadImg from "../../assets/Images/play.png"
+import downloadImg from "../../assets/play.png"
 const Footer = () => {
   return (
     <footer className="mt-30 bg-[#030712] py-10 px-20">

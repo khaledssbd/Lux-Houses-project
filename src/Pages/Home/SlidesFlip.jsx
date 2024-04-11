@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 // npm i framer-motion
-import Image_1 from '../../assets/Images/3.jpg';
-import Image_2 from '../../assets/Images/8.jpg';
+import Image_1 from '../../assets/3.jpg';
+import Image_2 from '../../assets/8.jpg';
 
 const SlidesFlip = () => {
   const [isFlipped, setIsFlipped] = useState(false);

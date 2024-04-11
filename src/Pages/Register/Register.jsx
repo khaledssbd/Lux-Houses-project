@@ -70,10 +70,11 @@ const Register = () => {
     }
     createUser(email, password)
       .then(() => {
-        updateUserProfile(name, photo);
-        logOut().then(() => {
-          navigate('/login');
-          toast.success('Account created successfully! Please login..');
+        updateUserProfile(name, photo).then(() => {
+          logOut().then(() => {
+            navigate('/login');
+            toast.success('Account created successfully! Please login..');
+          });
         });
       })
       .catch(error => {
@@ -209,9 +210,10 @@ const Register = () => {
           <button
             onClick={() => {
               signInWithSocial(googleProvider).then(() => {
-              navigate('/');
-              toast.success('Successfully signed in');
-            });}}
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaGoogle /> Google
@@ -219,9 +221,10 @@ const Register = () => {
           <button
             onClick={() => {
               signInWithSocial(githubProvider).then(() => {
-              navigate('/');
-              toast.success('Successfully signed in');
-            });}}
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaGithub /> Github
@@ -229,9 +232,10 @@ const Register = () => {
           <button
             onClick={() => {
               signInWithSocial(twitterProvider).then(() => {
-              navigate('/');
-              toast.success('Successfully signed in');
-            });}}
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaTwitter /> Twitter

@@ -35,7 +35,7 @@
   },
   {
     "estate_id": 3,
-    "segment_name": "Resorts",
+    "segment_name": "Resort",
     "estate_title": "Five-Star Resort & Spa",
     "image": "https://i.ibb.co/MNvnCT2/3.jpg",
     "description": "Experience unparalleled luxury and relaxation at this five-star resort & spa. Set amidst lush tropical gardens, it offers world-class amenities and personalized service for a truly unforgettable stay.",
@@ -52,7 +52,7 @@
   },
   {
     "estate_id": 4,
-    "segment_name": "Private Islands",
+    "segment_name": "Private Island",
     "estate_title": "Private Island Retreat",
     "image": "https://i.ibb.co/ZcgCmth/4.jpg",
     "description": "Escape to your own private paradise with this exclusive island retreat. Surrounded by turquoise waters and lush vegetation, it offers unrivaled privacy and seclusion for the discerning buyer.",
@@ -64,7 +64,7 @@
   },
   {
     "estate_id": 5,
-    "segment_name": "Villas",
+    "segment_name": "Villa",
     "estate_title": "Luxury Oceanfront Villa",
     "image": "https://i.ibb.co/D1NNcgt/5.jpg",
     "description": "Indulge in coastal luxury with this oceanfront villa featuring stunning sea views and contemporary design. With spacious interiors and outdoor living spaces, it's perfect for entertaining guests and family.",
@@ -81,7 +81,7 @@
   },
   {
     "estate_id": 6,
-    "segment_name": "Mansions",
+    "segment_name": "Mansion",
     "estate_title": "Grand Mansion Estate",
     "image": "https://i.ibb.co/WPwD8Jv/6.jpg",
     "description": "Live in luxury with this grand mansion estate nestled amidst sprawling gardens and mature trees. With elegant interiors and extensive grounds, it offers the epitome of refined living.",
@@ -132,7 +132,7 @@
   },
   {
     "estate_id": 9,
-    "segment_name": "Resorts",
+    "segment_name": "Resort",
     "estate_title": "Luxury Mountain Resort",
     "image": "https://i.ibb.co/wBxbsMh/9.jpg",
     "description": "Discover the beauty of the mountains with this luxury resort nestled amidst alpine forests and snow-capped peaks. Offering world-class amenities and outdoor adventures, it's an ideal destination for year-round relaxation and recreation.",

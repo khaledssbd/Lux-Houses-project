@@ -29,7 +29,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -47,20 +46,15 @@ const AuthProvider = ({ children }) => {
 
   const signInWithSocial = socialProvider => {
     setLoading(true);
-    return signInWithPopup(auth, socialProvider)
+    return signInWithPopup(auth, socialProvider);
   };
 
   const updateUserProfile = (userName, userPhotoURL) => {
-    updateProfile(auth.currentUser, {
+    
+    return updateProfile(auth.currentUser, {
       displayName: userName,
       photoURL: userPhotoURL,
     });
-    //   .then(() => {
-    //     toast.success('Profile updated successfully!');
-    //   })
-    //   .catch(error => {
-    //     console.log(error.message);
-    //   });
   };
 
   useEffect(() => {

@@ -7,6 +7,7 @@ import Register from '../Pages/Register/Register';
 import LuxuryHouseDetail from '../Pages/LuxuryHouseDetail/LuxuryHouseDetail';
 import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
 import UserProfile from '../Pages/UserProfile';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -34,42 +35,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/update-profile',
-        element: <UpdateProfile />,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/user-profile',
-        element: <UserProfile/>
+        element: (
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        ),
       },
-      //       {
-      //         path: '/listed-books',
-      //         loader: () => fetch('/books.json'),
-      //         element: <ListedBooks />,
-      //         children: [
-      //           {
-      //             index: true,
-      //             element: <ReadBooks />,
-      //             loader: () => fetch('/books.json'),
-      //           },
-      //           {
-      //             path: 'wishlist',
-      //             element: <Wishlist />,
-      //             loader: () => fetch('/books.json'),
-      //           },
-      //         ],
-      //       },
-      //       {
-      //         path: '/pages-to-read',
-      //         loader: () => fetch('/books.json'),
-      //         element: <PagesToRead />,
-      //       },
-      //       {
-      //         path: '/terms',
-      //         element: <Terms />,
-      //       },
-      //       {
-      //         path: '/contact-us',
-      //         element: <ContactUs />,
-      //       },
     ],
   },
 ]);
