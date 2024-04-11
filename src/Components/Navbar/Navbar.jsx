@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className='bg-slate-300' to="/">Home</NavLink>
       </li>
       {user && (
         <>
@@ -70,15 +70,18 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            <img src={user?.photoURL || userImg} />
-          </div>
-        </label>
         {user ? (
-          <button onClick={handleLogOut} className="btn">
-            Sign Out
-          </button>
+          <>
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src={user?.photoURL || userImg} />
+              </div>
+            </label>
+
+            <button onClick={handleLogOut} className="btn">
+              Log Out
+            </button>
+          </>
         ) : (
           <Link to="/login">
             <button className="btn bg-primary text-white hover:bg-green-500 hover:text-black ml-2">
