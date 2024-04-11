@@ -5,6 +5,8 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import LuxuryHouseDetail from '../Pages/LuxuryHouseDetail/LuxuryHouseDetail';
+import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
+import UserProfile from '../Pages/UserProfile';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
         path: '/luxury/:estate_id',
         loader: () => fetch('/houses.json'),
         element: <LuxuryHouseDetail />,
+      },
+      {
+        path: '/update-profile',
+        element: <UpdateProfile />,
+      },
+      {
+        path: '/user-profile',
+        element: <UserProfile/>
       },
       //       {
       //         path: '/listed-books',

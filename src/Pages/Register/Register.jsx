@@ -1,11 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import toast from 'react-hot-toast';
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
-
+  const { createUser, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = e => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -18,9 +19,14 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         console.log(result.user);
+        logOut();
+        navigate('/login');
+        toast.success('Account created successfully! Please login..');
       })
       .catch(error => {
         console.error(error);
+        if (error.message === 'Firebase: Error (auth/email-already-in-use).')
+          {toast.error('Account already exists. Please log in..');}
       });
   };
 
@@ -32,51 +38,44 @@ const Register = () => {
       <h2 className="text-3xl my-4 text-center">Please Register</h2>
       <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto">
         <div className="form-control">
-          <label className="label">
-            <span className="label-text">Name</span>
-          </label>
+          <label className="label label-text">Name</label>
           <input
             type="text"
             required
             name="name"
-            placeholder="Name"
+            placeholder="Your Name"
             className="input input-bordered"
           />
         </div>
         <div className="form-control">
-          <label className="label">
-            <span className="label-text">Photo URL</span>
-          </label>
+          <label className="label label-text">Photo URL</label>
           <input
             type="text"
             required
             name="photo"
-            placeholder="Photo URL"
+            placeholder="Your Photo URL"
             className="input input-bordered"
           />
         </div>
         <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
+          <label className="label label-text">Email</label>
           <input
             type="email"
             required
             name="email"
-            placeholder="Email"
+            placeholder="Your Email"
             className="input input-bordered"
           />
         </div>
         <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
+          <label className="label label-text">Password</label>
           <input
             type="password"
             required
             name="password"
-            placeholder="Password"
+            placeholder="Your Password"
             className="input input-bordered"
+            autoComplete="true"
           />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">

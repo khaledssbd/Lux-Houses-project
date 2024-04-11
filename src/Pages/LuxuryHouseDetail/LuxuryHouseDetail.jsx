@@ -20,7 +20,7 @@ const LuxuryHouseDetail = () => {
   } = house;
 
   return (
-    <div className="mt-6 md:mt-11">
+    <div className="my-6 md:my-11">
       <Helmet>
         <title>Lux Houzez | House Details: {Id}</title>
       </Helmet>
@@ -32,7 +32,7 @@ const LuxuryHouseDetail = () => {
         />
       </div>
       <div className="grid grid-cols-3 gap-20">
-        <div className="col-span-2 flex flex-col gap-5">
+        <div className="col-span-2 flex flex-col gap-5 animate__animated animate__rubberBand">
           <h3 className="text-[#131313] text-start font-play text-[30px] lg:text-[40px] font-bold">
             {estate_title}
           </h3>
@@ -59,7 +59,7 @@ const LuxuryHouseDetail = () => {
           </h3>
         </div>
 
-        <div>
+        <div className="animate__animated animate__heartBeat">
           <div className="mt-28 ml-4 flex gap-3">
             <h3 className="text-start text-[#A58A56] text-base font-medium">
               Facilities:
@@ -77,7 +77,7 @@ const LuxuryHouseDetail = () => {
           <div className="flex flex-col gap-3">
             <div className="grid grid-cols-3">
               <h4 className="text-[#131313B2] text-base font-normal">Area:</h4>
-              <div className="col-span-2">
+              <div className="col-span-2 text-left">
                 <h3 className="text-[#131313] text-base font-semibold">
                   {area}
                 </h3>
@@ -86,7 +86,7 @@ const LuxuryHouseDetail = () => {
 
             <div className="grid grid-cols-3">
               <h4 className="text-[#131313B2] text-base font-normal">Price:</h4>
-              <div className="col-span-2">
+              <div className="col-span-2 text-left">
                 <h3 className="text-[#131313] text-base font-semibold">
                   {price}
                 </h3>

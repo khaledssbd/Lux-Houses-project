@@ -14,7 +14,10 @@ const SlidesFlip = () => {
   };
   return (
     <div className="mt-24 mb-16">
-      <h4 className="text-[#131313] font-play text-xl md:text-3xl font-medium mb-4">
+      <h4
+        className="text-[#131313] font-play text-xl md:text-3xl font-medium mb-4"
+        data-aos="zoom-out-down"
+      >
         Slides of HOUZEZ{' (click on the Image)'}
       </h4>
 

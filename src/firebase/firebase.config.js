@@ -9,7 +9,5 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_LH_APPID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 export default app;

@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-
 // npm i framer-motion
 
 const CarouselAni = ({ allHouses }) => {
-       const till = allHouses.length;
+  const till = allHouses.length;
   const [positionIndexes, setPositionIndexes] = useState(
     Array.from({ length: till }, (_, i) => i)
   );
 
   const handleNext = () => {
     setPositionIndexes(prevIndexes => {
-      const updateIndexes = prevIndexes.map(prevIndex => (prevIndex + 1) % till);
+      const updateIndexes = prevIndexes.map(
+        prevIndex => (prevIndex + 1) % till
+      );
       return updateIndexes;
     });
   };
@@ -41,7 +42,10 @@ const CarouselAni = ({ allHouses }) => {
 
   return (
     <div className="mt-24 mb-16">
-      <h4 className="text-[#131313] font-play text-xl md:text-3xl font-medium">
+      <h4
+        className="text-[#131313] font-play text-xl md:text-3xl font-medium"
+        data-aos="zoom-in"
+      >
         Carousel HOUZEZ{' (click on the Next button)'}
       </h4>
       <div className="flex items-center flex-col justify-center">
@@ -59,6 +63,7 @@ const CarouselAni = ({ allHouses }) => {
         <button
           className="text-white mt-[500px] bg-indigo-400 rounded-md py-2 px-4"
           onClick={handleNext}
+          data-aos="zoom-out-up"
         >
           Next
         </button>

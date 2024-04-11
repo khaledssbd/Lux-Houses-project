@@ -12,6 +12,12 @@ Features:
 - Json data generation
 - tailwind CSS design
 - Toast Message
-- LocalStorage Implementation
+- aos, swiper and animate.css Implementation
 - Environment Variable configuration
 - Adaptable & Robust
+
+npm Packages for challenge:
+
+- npm i aos
+- npm i swiper
+- npm i animate.css --save
