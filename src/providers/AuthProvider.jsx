@@ -10,6 +10,7 @@ import {
   GithubAuthProvider,
   TwitterAuthProvider,
   FacebookAuthProvider,
+  updateProfile,
 } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 import PropTypes from 'prop-types';
@@ -28,6 +29,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -45,11 +47,20 @@ const AuthProvider = ({ children }) => {
 
   const signInWithSocial = socialProvider => {
     setLoading(true);
-    signInWithPopup(auth, socialProvider).then(result => {
-      setUser(result.data);
-      window.location.reload();
+    return signInWithPopup(auth, socialProvider)
+  };
+
+  const updateUserProfile = (userName, userPhotoURL) => {
+    updateProfile(auth.currentUser, {
+      displayName: userName,
+      photoURL: userPhotoURL,
     });
-    return;
+    //   .then(() => {
+    //     toast.success('Profile updated successfully!');
+    //   })
+    //   .catch(error => {
+    //     console.log(error.message);
+    //   });
   };
 
   useEffect(() => {
@@ -71,6 +82,7 @@ const AuthProvider = ({ children }) => {
     facebookProvider,
     githubProvider,
     twitterProvider,
+    updateUserProfile,
   };
 
   return (

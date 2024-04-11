@@ -7,25 +7,32 @@ import toast from 'react-hot-toast';
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-
   const handleLogOut = () => {
     logOut()
-      .then(() => {toast.success('You logged out successfully!');})
+      .then(() => {
+        toast.success('You logged out successfully!');
+      })
       .catch(error => console.error(error));
   };
 
   const navLinks = (
     <>
       <li>
-        <NavLink className='bg-slate-300' to="/">Home</NavLink>
+        <NavLink className="bg-slate-300" to="/">
+          Home
+        </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink to="/update-profile" className='mx-2'>Update Profile</NavLink>
+            <NavLink className="bg-slate-300 mx-2" to="/update-profile">
+              Update Profile
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/user-profile">User Profile</NavLink>
+            <NavLink className="bg-slate-300" to="/user-profile">
+              User Profile
+            </NavLink>
           </li>
         </>
       )}
@@ -74,7 +81,7 @@ const Navbar = () => {
           <>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={user?.photoURL || userImg} />
+                <img title={user.displayName} src={user?.photoURL || userImg} />
               </div>
             </label>
 

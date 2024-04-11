@@ -30,16 +30,11 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     logIn(email, password)
-      .then(result => {
-        console.log(result.user);
+      .then(() => {
         navigate(location?.state ? location.state : '/');
         toast.success('Account logged-in successfully!');
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 1000);
       })
       .catch(error => {
-        console.error(error.message);
         if (error.message === 'Firebase: Error (auth/invalid-credential).') {
           toast.error('Email or password is wrong, try again or reset..');
         }
@@ -95,25 +90,45 @@ const Login = () => {
         <h2 className="text-xl mt-10 mb-4">Login With</h2>
         <div className="flex justify-center gap-4">
           <button
-            onClick={() => signInWithSocial(facebookProvider)}
+            onClick={() => {
+              signInWithSocial(facebookProvider).then(() => {
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaFacebook /> Facebook
           </button>
           <button
-            onClick={() => signInWithSocial(googleProvider)}
+            onClick={() => {
+              signInWithSocial(googleProvider).then(() => {
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaGoogle /> Google
           </button>
           <button
-            onClick={() => signInWithSocial(githubProvider)}
+            onClick={() => {
+              signInWithSocial(githubProvider).then(() => {
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaGithub /> Github
           </button>
           <button
-            onClick={() => signInWithSocial(twitterProvider)}
+            onClick={() => {
+              signInWithSocial(twitterProvider).then(() => {
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaTwitter /> Twitter

@@ -11,15 +11,17 @@ import {
   FaEye,
   FaEyeSlash,
 } from 'react-icons/fa';
+
 const Register = () => {
   const {
     createUser,
     logOut,
     signInWithSocial,
-    googleProvider,
     facebookProvider,
+    googleProvider,
     githubProvider,
     twitterProvider,
+    updateUserProfile,
   } = useContext(AuthContext);
   const navigate = useNavigate();
   const [passError, setPassError] = useState('');
@@ -67,16 +69,14 @@ const Register = () => {
       return;
     }
     createUser(email, password)
-      .then(result => {
-        console.log(result.user);
-        logOut().then(result => {
-          console.log(result);
+      .then(() => {
+        updateUserProfile(name, photo);
+        logOut().then(() => {
           navigate('/login');
           toast.success('Account created successfully! Please login..');
         });
       })
       .catch(error => {
-        console.error(error);
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           navigate('/login');
           toast.error('Account already exists. Please log in..');
@@ -196,25 +196,42 @@ const Register = () => {
         <h2 className="text-xl mt-10 mb-4">Login With</h2>
         <div className="flex justify-center gap-4">
           <button
-            onClick={() => signInWithSocial(facebookProvider)}
+            onClick={() => {
+              signInWithSocial(facebookProvider).then(() => {
+                navigate('/');
+                toast.success('Successfully signed in');
+              });
+            }}
             className="btn btn-outline bg-green-400"
           >
             <FaFacebook /> Facebook
           </button>
           <button
-            onClick={() => signInWithSocial(googleProvider)}
+            onClick={() => {
+              signInWithSocial(googleProvider).then(() => {
+              navigate('/');
+              toast.success('Successfully signed in');
+            });}}
             className="btn btn-outline bg-green-400"
           >
             <FaGoogle /> Google
           </button>
           <button
-            onClick={() => signInWithSocial(githubProvider)}
+            onClick={() => {
+              signInWithSocial(githubProvider).then(() => {
+              navigate('/');
+              toast.success('Successfully signed in');
+            });}}
             className="btn btn-outline bg-green-400"
           >
             <FaGithub /> Github
           </button>
           <button
-            onClick={() => signInWithSocial(twitterProvider)}
+            onClick={() => {
+              signInWithSocial(twitterProvider).then(() => {
+              navigate('/');
+              toast.success('Successfully signed in');
+            });}}
             className="btn btn-outline bg-green-400"
           >
             <FaTwitter /> Twitter
