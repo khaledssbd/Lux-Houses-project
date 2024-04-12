@@ -13,7 +13,7 @@ const UserProfile = () => {
         <title>Lux Houzez | User Profile</title>
       </Helmet>
       <h2 className="text-2xl my-10 text-center font-bold">Your Profile</h2>
-      <div className=" md:w-3/4 lg:w-1/2 mx-auto bg-green-300">
+      <div className=" md:w-3/4 lg:w-1/2 mx-auto">
         <div className="md:pl-20">
           <h4 className="text-base text-left font-medium">
             Your Name:
