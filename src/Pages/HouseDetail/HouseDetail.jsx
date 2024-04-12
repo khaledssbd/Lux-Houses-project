@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { IoLocationOutline } from 'react-icons/io5';
 import { Helmet } from 'react-helmet-async';
 
-const LuxuryHouseDetail = () => {
+const HouseDetail = () => {
   const allHouses = useLoaderData();
   const { estate_id: Id } = useParams();
   const house = allHouses.find(h => h.estate_id === parseInt(Id));
@@ -31,12 +31,12 @@ const LuxuryHouseDetail = () => {
           alt=""
         />
       </div>
-      <div className="grid grid-cols-3 gap-20">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10">
         <div className="col-span-2 flex flex-col gap-5 animate__animated animate__rubberBand">
-          <h3 className="text-[#131313] text-start font-play text-[30px] lg:text-[40px] font-bold">
+          <h3 className="text-[#131313] text-start font-play text-[20px] md:text-[40px] font-bold">
             {estate_title}
           </h3>
-          <h3 className="text-[#131313CC] text-start text-xl font-medium">
+          <h3 className="text-[#131313CC] text-start text-base md:text-xl font-medium">
             Segment: {segment_name}
           </h3>
           <div className="flex gap-3">
@@ -51,7 +51,7 @@ const LuxuryHouseDetail = () => {
             <IoLocationOutline />
             <h4 className="ml-2">{location}</h4>
           </div>
-          <h3 className="text-[#131313CC] text-xl font-medium mb-4 pb-6 border-b">
+          <h3 className="text-[#131313CC] text-lg md:text-xl font-medium mb-4 pb-6 border-b">
             Description
           </h3>
           <h3 className="text-[#131313B2] text-start text-base font-normal">
@@ -60,13 +60,13 @@ const LuxuryHouseDetail = () => {
         </div>
 
         <div className="animate__animated animate__heartBeat">
-          <div className="mt-28 ml-4 flex gap-3">
-            <h3 className="text-start text-[#A58A56] text-base font-medium">
+          <div className="lg:mt-28 ml-4 gap-3 mb-6">
+            <h3 className="text-start text-[#A58A56] text-base font-medium mb-2">
               Facilities:
             </h3>
-            <div className="flex flex-col items-start gap-1 mb-4">
+            <div className="text-left space-y-1 mb-4 ml-2">
               {facilities.map((facility, i) => (
-                <h3 key={i} className="text-[#A58A56] text-base font-medium">
+                <h3 key={i} className="text-[#A58A56] text-sm font-medium">
                   {i + 1}
                   {'. '} {facility}
                 </h3>
@@ -74,7 +74,7 @@ const LuxuryHouseDetail = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="space-y-3">
             <div className="grid grid-cols-3">
               <h4 className="text-[#131313B2] text-base font-normal">Area:</h4>
               <div className="col-span-2 text-left">
@@ -92,6 +92,11 @@ const LuxuryHouseDetail = () => {
                 </h3>
               </div>
             </div>
+            <div className="">
+              <button className="btn bg-primary text-white hover:bg-green-500 hover:text-black mt-5">
+                Add to Favourite
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -99,4 +104,4 @@ const LuxuryHouseDetail = () => {
   );
 };
 
-export default LuxuryHouseDetail;
+export default HouseDetail;

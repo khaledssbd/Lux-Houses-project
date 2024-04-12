@@ -6,7 +6,6 @@ import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { Toaster } from 'react-hot-toast';
 // npm i aos
 
 const Root = () => {
@@ -15,8 +14,7 @@ const Root = () => {
   }, []);
   return (
     <div>
-      
-      <div className="md:mx-32 mx-3 md:mt-8 mt-4">
+      <div className="lg:mx-28 md:20 sm:mx-5 mx-3 md:mt-8 mt-4">
         <div>
           <Navbar />
         </div>

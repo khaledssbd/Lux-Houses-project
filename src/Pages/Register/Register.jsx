@@ -23,11 +23,13 @@ const Register = () => {
     twitterProvider,
     updateUserProfile,
   } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const [passError, setPassError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+
   const handleRegister = e => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -68,6 +70,7 @@ const Register = () => {
     if (!isChecked) {
       return;
     }
+    
     createUser(email, password)
       .then(() => {
         updateUserProfile(name, photo).then(() => {

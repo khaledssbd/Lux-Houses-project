@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaLandmark } from 'react-icons/fa6';
 import { IoLocationOutline } from 'react-icons/io5';
 
-const House = ({ aHouse }) => {
+const HouseCard = ({ aHouse }) => {
   const {
     estate_id,
     segment_name,
@@ -27,13 +27,13 @@ const House = ({ aHouse }) => {
       <h3 className="text-[#131313] font-play text-2xl font-bold flex-grow mt-4">
         {estate_title}
       </h3>
-      <div className="mt-4 ml-16 flex gap-3">
+      <div className="mt-4 ml-5">
         <h3 className="text-start color-primary text-sm font-medium">
           Facilities:
         </h3>
-        <div className="flex flex-col items-start gap-1">
+        <div className="flex flex-col items-start gap-1 ml-1">
           {facilities.map((facility, i) => (
-            <h3 key={i} className="color-primary text-sm font-medium">
+            <h3 key={i} className="color-primary text-xs font-medium">
               {i + 1}
               {'. '} {facility}
             </h3>
@@ -58,7 +58,7 @@ const House = ({ aHouse }) => {
         <button className="p-2 text-white bg-[#000000A6] rounded-sm text-start text-sm font-normal">
           {status}
         </button>
-        <Link to={`/luxury/${estate_id}`}>
+        <Link to={`/house/${estate_id}`}>
           <button className="text-white hover:bg-amber-700 bg-primary rounded-lg p-2">
             View Property
           </button>
@@ -68,8 +68,8 @@ const House = ({ aHouse }) => {
   );
 };
 
-export default House;
+export default HouseCard;
 
-House.propTypes = {
+HouseCard.propTypes = {
   aHouse: PropTypes.object.isRequired,
 };

@@ -41,7 +41,7 @@ const CarouselAni = ({ allHouses }) => {
   };
 
   return (
-    <div className="mt-24 mb-16">
+    <div className="mt-10 md:mt-24 mb-0 md:mb-16">
       <h4
         className="text-[#131313] font-play text-xl md:text-3xl font-medium"
         data-aos="zoom-in"
@@ -61,7 +61,7 @@ const CarouselAni = ({ allHouses }) => {
           />
         ))}
         <button
-          className="text-white mt-[500px] bg-indigo-400 rounded-md py-2 px-4"
+          className="text-white mt-[250px] md:mt-[340px] lg:mt-[500px] bg-indigo-400 rounded-md py-2 px-4"
           onClick={handleNext}
           data-aos="zoom-out-up"
         >

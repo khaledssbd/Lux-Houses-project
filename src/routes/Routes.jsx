@@ -4,9 +4,9 @@ import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
-import LuxuryHouseDetail from '../Pages/LuxuryHouseDetail/LuxuryHouseDetail';
+import HouseDetail from '../Pages/HouseDetail/HouseDetail';
 import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
-import UserProfile from '../Pages/UserProfile';
+import UserProfile from '../Pages/UserProfile/UserProfile';
 import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
@@ -29,9 +29,9 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/luxury/:estate_id',
+        path: '/house/:estate_id',
         loader: () => fetch('/houses.json'),
-        element: <LuxuryHouseDetail />,
+        element: <HouseDetail />,
       },
       {
         path: '/update-profile',

@@ -44,6 +44,7 @@ body {
   transform: rotateY(180deg);
 }
 
+
 @media screen and (max-width: 426px) {
   #root {
     margin-right: 10px;

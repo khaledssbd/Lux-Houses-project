@@ -20,7 +20,7 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div>
+    <div className='mb-10'>
       <Helmet>
         <title>Lux Houzez | Update Profile</title>
       </Helmet>

@@ -18,19 +18,40 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink className="bg-slate-300" to="/">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg'
+              : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-xs md:text-lg font-normal'
+          }
+          to="/"
+        >
           Home
         </NavLink>
       </li>
       {user && (
         <>
           <li>
-            <NavLink className="bg-slate-300 mx-2" to="/update-profile">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg lg:mx-2'
+                  : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal lg:mx-2'
+              }
+              to="/update-profile"
+            >
               Update Profile
             </NavLink>
           </li>
           <li>
-            <NavLink className="bg-slate-300" to="/user-profile">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg'
+                  : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal'
+              }
+              to="/user-profile"
+            >
               User Profile
             </NavLink>
           </li>
@@ -68,7 +89,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-2xl md:text-3xl font-bold text-[#150B2B]"
+          className="btn btn-ghost text-xl md:text-3xl font-bold text-[#150B2B]"
         >
           Lux Houzez
         </Link>
@@ -85,13 +106,16 @@ const Navbar = () => {
               </div>
             </label>
 
-            <button onClick={handleLogOut} className="btn">
+            <button
+              onClick={handleLogOut}
+              className="btn bg-primary text-white hover:bg-green-500 hover:text-black ml-2"
+            >
               Log Out
             </button>
           </>
         ) : (
           <Link to="/login">
-            <button className="btn bg-primary text-white hover:bg-green-500 hover:text-black ml-2">
+            <button className="btn bg-primary text-white hover:bg-green-500 hover:text-black">
               Login
             </button>
           </Link>

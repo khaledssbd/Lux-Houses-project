@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import House from './House';
+import HouseCard from './HouseCard';
 
 const Houses = ({ allHouses }) => {
   return (
@@ -15,9 +15,9 @@ const Houses = ({ allHouses }) => {
           time
         </h4>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allHouses.map((aHouse, idx) => (
-          <House key={idx} aHouse={aHouse}></House>
+          <HouseCard key={idx} aHouse={aHouse}></HouseCard>
         ))}
       </div>
     </div>
