@@ -8,7 +8,7 @@ const Houses = ({ allHouses }) => {
         <img className="w-12 mb-8" src="lux.svg" alt="" data-aos="fade-right" />
         <h4
           className="text-[#131313] font-play text-xl md:text-3xl font-medium mb-8 md:mb-14"
-          data-aos="fade-left"
+          data-aos="fade-right"
         >
           Proud on providing the best service in the <br />
           industry and we want to make sure you find your dream property in no

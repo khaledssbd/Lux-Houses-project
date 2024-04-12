@@ -37,7 +37,6 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
-    console.log(name, photo, email, password);
 
     setEmailError('');
     setPassError('');
@@ -46,31 +45,36 @@ const Register = () => {
       setEmailError('Must use a valid email address..');
       return;
     }
-    if (password.length < 8) {
-      setPassError('Password must be at least 8 characters..');
-      return;
-    }
 
     if (!/[A-Z]/.test(password)) {
       setPassError('Password must have at least one Uppercase letter..');
       return;
     }
+
     if (!/[a-z]/.test(password)) {
       setPassError('Password must have at least one Lowercase letter..');
       return;
     }
+
     if (!/\d{2,}/.test(password)) {
       setPassError('Password must have at least 2 numbers..');
       return;
     }
+
+    if (password.length < 8) {
+      setPassError('Password must be of at least 8 characters..');
+      return;
+    }
+
     if (password !== confirmPassword) {
       setPassError("Password didn't match..");
       return;
     }
+
     if (!isChecked) {
       return;
     }
-    
+
     createUser(email, password)
       .then(() => {
         updateUserProfile(name, photo).then(() => {
@@ -80,6 +84,7 @@ const Register = () => {
           });
         });
       })
+
       .catch(error => {
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           navigate('/login');
@@ -89,8 +94,16 @@ const Register = () => {
         }
       });
   };
+
+  const socialSignIn = provider => {
+    signInWithSocial(provider).then(() => {
+      navigate(location?.state ? location.state : '/');
+      toast.success('Successfully signed in');
+    });
+  };
+
   return (
-    <div className="mb-10">
+    <div className="mb-5 md:mb-10">
       <Helmet>
         <title>Lux Houzez | Register</title>
       </Helmet>
@@ -196,53 +209,45 @@ const Register = () => {
           <button className="btn btn-primary">Register</button>
         </div>
       </form>
-      <div>
+      <div className="">
         <h2 className="text-xl mt-10 mb-4">Login With</h2>
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => {
-              signInWithSocial(facebookProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaFacebook /> Facebook
-          </button>
-          <button
-            onClick={() => {
-              signInWithSocial(googleProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaGoogle /> Google
-          </button>
-          <button
-            onClick={() => {
-              signInWithSocial(githubProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaGithub /> Github
-          </button>
-          <button
-            onClick={() => {
-              signInWithSocial(twitterProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaTwitter /> Twitter
-          </button>
+        <div className="md:flex justify-center items-center gap-4 ">
+          <div className="flex justify-center gap-4 mb-3">
+            <button
+              onClick={() => {
+                socialSignIn(facebookProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaFacebook /> Facebook
+            </button>
+            <button
+              onClick={() => {
+                socialSignIn(googleProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaGoogle /> Google
+            </button>
+          </div>
+          <div className="flex justify-center gap-4 mb-3">
+            <button
+              onClick={() => {
+                socialSignIn(githubProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaGithub /> Github
+            </button>
+            <button
+              onClick={() => {
+                socialSignIn(twitterProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaTwitter /> Twitter
+            </button>
+          </div>
         </div>
       </div>
       <p className="text-center mt-4">

@@ -21,6 +21,7 @@ const Login = () => {
     githubProvider,
     twitterProvider,
   } = useContext(AuthContext);
+
   const location = useLocation();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -41,8 +42,15 @@ const Login = () => {
       });
   };
 
+  const socialSignIn = provider => {
+    signInWithSocial(provider).then(() => {
+      navigate(location?.state ? location.state : '/');
+      toast.success('Successfully signed in');
+    });
+  };
+
   return (
-    <div>
+    <div className="mb-5 md:mb-10">
       <Helmet>
         <title>Lux Houzez | Login</title>
       </Helmet>
@@ -88,51 +96,43 @@ const Login = () => {
       </form>
       <div>
         <h2 className="text-xl mt-10 mb-4">Login With</h2>
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => {
-              signInWithSocial(facebookProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaFacebook /> Facebook
-          </button>
-          <button
-            onClick={() => {
-              signInWithSocial(googleProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaGoogle /> Google
-          </button>
-          <button
-            onClick={() => {
-              signInWithSocial(githubProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaGithub /> Github
-          </button>
-          <button
-            onClick={() => {
-              signInWithSocial(twitterProvider).then(() => {
-                navigate('/');
-                toast.success('Successfully signed in');
-              });
-            }}
-            className="btn btn-outline bg-green-400"
-          >
-            <FaTwitter /> Twitter
-          </button>
+        <div className="md:flex justify-center items-center gap-4 ">
+          <div className="flex justify-center gap-4 mb-3">
+            <button
+              onClick={() => {
+                socialSignIn(facebookProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaFacebook /> Facebook
+            </button>
+            <button
+              onClick={() => {
+                socialSignIn(googleProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaGoogle /> Google
+            </button>
+          </div>
+          <div className="flex justify-center gap-4 mb-3">
+            <button
+              onClick={() => {
+                socialSignIn(githubProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaGithub /> Github
+            </button>
+            <button
+              onClick={() => {
+                socialSignIn(twitterProvider);
+              }}
+              className="btn btn-outline bg-green-400"
+            >
+              <FaTwitter /> Twitter
+            </button>
+          </div>
         </div>
       </div>
       <p className="text-center mt-4">

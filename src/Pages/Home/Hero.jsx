@@ -21,8 +21,8 @@ const Hero = () => {
         quality real estate
       </h1>
       <h5
-        className="font-inter mb-10 mt-4 text-sm font-normal text-white md:text-lg"
-        data-aos="fade-up-left"
+        className="font-inter mb-10 mt-4 text-sm font-normal text-white md:text-lg px-3"
+        data-aos="fade-down-right"
       >
         We are one of the leading developers in europe providing exquisitely
         designed modern living villas in <br /> unique locations. We have made

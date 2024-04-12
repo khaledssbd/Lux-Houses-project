@@ -20,14 +20,19 @@ const Footer = () => {
             house.
           </p>
         </div>
-        <div>
+        <div className="flex flex-col items-center">
           <h4
-            className="text-white text-base md:text-xl font-semibold mb-5"
+            className="text-white text-xs sm:text-base md:text-xl font-semibold mb-5"
             data-aos="zoom-out-right"
           >
             Download our app
           </h4>
-          <img src={downloadImg} alt="" data-aos="zoom-out-left" />
+          <img
+            className="w-2/3 sm:w-full"
+            src={downloadImg}
+            alt=""
+            data-aos="zoom-out-right"
+          />
         </div>
       </div>
       <hr />
