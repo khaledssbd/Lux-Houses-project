@@ -22,7 +22,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg'
-              : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-xs md:text-lg font-normal'
+              : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal'
           }
           to="/"
         >
@@ -89,7 +89,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn btn-ghost text-xl md:text-3xl font-bold text-[#150B2B]"
+          className="btn -ml-6 sm:-ml-0 btn-ghost text-lg sm:text-xl md:text-3xl font-bold text-[#150B2B]"
         >
           Lux Houzez
         </Link>

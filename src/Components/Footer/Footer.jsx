@@ -8,7 +8,7 @@ const Footer = () => {
           <Link
             to="/"
             className="btn btn-ghost hover:bg-amber-600 text-white text-2xl md:text-4xl font-extrabold mb-4"
-            data-aos="zoom-out-left"
+            data-aos="flip-up"
           >
             Lux Houzez
           </Link>

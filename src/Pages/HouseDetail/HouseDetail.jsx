@@ -26,13 +26,13 @@ const HouseDetail = () => {
       </Helmet>
       <div className="flex justify-center items-center mb-5 md:mb-10">
         <img
-          className="min-h-[calc(100vh-160px)] rounded-2xl"
+          className="h-1/2 rounded-xl"
           src={image}
           alt=""
         />
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10">
-        <div className="col-span-2 flex flex-col gap-5 animate__animated animate__rubberBand">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="col-span-3 flex flex-col gap-5 animate__animated animate__rubberBand">
           <h3 className="text-[#131313] text-start font-play text-[20px] md:text-[40px] font-bold">
             {estate_title}
           </h3>

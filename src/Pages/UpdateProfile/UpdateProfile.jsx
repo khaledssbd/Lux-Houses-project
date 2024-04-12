@@ -73,7 +73,7 @@ const UpdateProfile = () => {
 
       <p className="text-center mt-4">
         Want to check your profile?{' '}
-        <Link className="text-blue-600 font-bold ml-2" to="/user-profile">
+        <Link className="text-blue-600 text-sm font-bold ml-2" to="/user-profile">
           Click here
         </Link>
       </p>
