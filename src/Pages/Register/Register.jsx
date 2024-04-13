@@ -56,9 +56,9 @@ const Register = () => {
       return;
     }
 
-    if (!/[@#%^&*]/.test(password)) {
+  if (!/[!@#$%^&*=+]/.test(password)) {
       setPassError(
-        'Password must have at least one special character like @,#,%,^,&,*'
+        'Password must have at least one special character like !,@,#,$,%,^,&,*,=,+'
       );
       return;
     }
@@ -74,7 +74,7 @@ const Register = () => {
     }
 
     if (password !== confirmPassword) {
-      setPassError("Password and Confirm Password didn't match..");
+      setPassError("Password and Confirm Password didn't match");
       return;
     }
 
@@ -87,17 +87,16 @@ const Register = () => {
         updateUserProfile(name, photo).then(() => {
           logOut().then(() => {
             navigate('/login');
-            toast.success('Account created successfully! Please login..');
+            toast.success('Account created successfully! Please login');
           });
         });
       })
-
       .catch(error => {
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           navigate('/login');
           toast.error('Account already exists. Please log in..');
         } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
-          setEmailError('Must use a valid email address..');
+          setEmailError('Must use a valid email address');
         }
       });
   };
