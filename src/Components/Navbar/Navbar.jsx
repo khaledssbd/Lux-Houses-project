@@ -36,6 +36,18 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg lg:mx-2'
+                  : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal lg:ml-2'
+              }
+              to="/favourite-houses"
+            >
+              Favourite Houses
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg lg:mx-2'
                   : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal lg:mx-2'
               }
               to="/update-profile"

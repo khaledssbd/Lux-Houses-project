@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="mb-12 text-start">
           <Link
             to="/"
-            className="btn btn-ghost hover:bg-amber-600 text-white text-2xl md:text-4xl font-extrabold mb-4"
+            className="btn btn-ghost hover:bg-slate-600 text-white text-2xl md:text-4xl font-extrabold mb-4"
             data-aos="flip-up"
           >
             Lux Houzez

@@ -8,6 +8,7 @@ import HouseDetail from '../Pages/HouseDetail/HouseDetail';
 import UpdateProfile from '../Pages/UpdateProfile/UpdateProfile';
 import UserProfile from '../Pages/UserProfile/UserProfile';
 import PrivateRoute from './PrivateRoute';
+import FavouriteHouses from '../Pages/FavouriteHouses/FavouriteHouses';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <HouseDetail />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/favourite-houses',
+        loader: () => fetch('/houses.json'),
+        element: (
+          <PrivateRoute>
+            <FavouriteHouses />
           </PrivateRoute>
         ),
       },

@@ -223,7 +223,7 @@ const Register = () => {
               onClick={() => {
                 socialSignIn(facebookProvider);
               }}
-              className="btn btn-outline bg-green-400"
+              className="btn btn-outline bg-[#1877F2] text-white"
             >
               <FaFacebook /> Facebook
             </button>
@@ -231,7 +231,7 @@ const Register = () => {
               onClick={() => {
                 socialSignIn(googleProvider);
               }}
-              className="btn btn-outline bg-green-400"
+              className="btn btn-outline bg-[#DB4437] text-white"
             >
               <FaGoogle /> Google
             </button>
@@ -241,7 +241,7 @@ const Register = () => {
               onClick={() => {
                 socialSignIn(githubProvider);
               }}
-              className="btn btn-outline bg-green-400"
+              className="btn btn-outline bg-[#333] hover:bg-[#4078c0] hover:text-black text-white"
             >
               <FaGithub /> Github
             </button>
@@ -249,7 +249,7 @@ const Register = () => {
               onClick={() => {
                 socialSignIn(twitterProvider);
               }}
-              className="btn btn-outline bg-green-400"
+              className="btn btn-outline bg-[#1DA1F2] text-white"
             >
               <FaTwitter /> Twitter
             </button>

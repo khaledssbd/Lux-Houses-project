@@ -61,7 +61,7 @@ const CarouselAni = ({ allHouses }) => {
           />
         ))}
         <button
-          className="text-white mt-[200px] sm:mt-[280px] md:mt-[400px] lg:mt-[500px] bg-indigo-400 rounded-md py-2 px-4"
+          className="text-white mt-[200px] sm:mt-[280px] md:mt-[400px] lg:mt-[500px] bg-indigo-600 rounded-md py-2 px-4"
           onClick={handleNext}
           data-aos="zoom-out-up"
         >

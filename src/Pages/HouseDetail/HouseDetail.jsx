@@ -1,9 +1,13 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { IoLocationOutline } from 'react-icons/io5';
 import { Helmet } from 'react-helmet-async';
+import { addToFavourite, getFavouriteHouses } from '../../Utils/Utils';
+import { useEffect, useState } from 'react';
 
 const HouseDetail = () => {
   const allHouses = useLoaderData();
+  const favouriteHouses = getFavouriteHouses();
+  const [showCheckOut, setShowCheckOut] = useState(false);
   const { estate_id: Id } = useParams();
   const house = allHouses.find(h => h.estate_id === parseInt(Id));
 
@@ -19,17 +23,25 @@ const HouseDetail = () => {
     facilities,
   } = house;
 
+  useEffect(() => {
+    const isExist = favouriteHouses.find(b => b === Id);
+    if (isExist) {
+      setShowCheckOut(true);
+    }
+  }, [favouriteHouses, Id]);
+
+  const makeItFavourite = Id => {
+    addToFavourite(Id);
+    setShowCheckOut(true);
+  };
+
   return (
     <div className="my-6 md:my-11">
       <Helmet>
         <title>Lux Houzez | House Details: {Id}</title>
       </Helmet>
       <div className="flex justify-center items-center mb-5 md:mb-10">
-        <img
-          className="h-1/2 rounded-xl"
-          src={image}
-          alt=""
-        />
+        <img className="h-1/2 rounded-xl" src={image} alt="" />
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="col-span-3 flex flex-col gap-5 animate__animated animate__rubberBand">
@@ -59,12 +71,12 @@ const HouseDetail = () => {
           </h3>
         </div>
 
-        <div className="animate__animated animate__heartBeat">
-          <div className="lg:mt-28 ml-4 gap-3 mb-6">
+        <div className="animate__animated animate__heartBeat min-w-56">
+          <div className="lg:mt-28 ml-4 flex flex-col mb-6">
             <h3 className="text-start text-[#A58A56] text-base font-medium mb-2">
               Facilities:
             </h3>
-            <div className="text-left space-y-1 mb-4 ml-2">
+            <div className="text-left space-y-1 mb-4 ml-2 flex-grow">
               {facilities.map((facility, i) => (
                 <h3 key={i} className="text-[#A58A56] text-sm font-medium">
                   {i + 1}
@@ -92,10 +104,21 @@ const HouseDetail = () => {
                 </h3>
               </div>
             </div>
-            <div className="">
-              <button className="btn bg-primary text-white hover:bg-green-500 hover:text-black mt-5">
-                Add to Favourite
-              </button>
+            <div className="mt-5">
+              {!showCheckOut ? (
+                <button
+                  onClick={() => makeItFavourite(Id)}
+                  className="btn text-xs md:text-sm bg-green-600 text-white hover:bg-green-500 hover:text-black"
+                >
+                  Add to Favourite
+                </button>
+              ) : (
+                <Link to="/favourite-houses">
+                  <button className="btn text-xs md:text-sm bg-blue-600 text-white hover:bg-red-500 hover:text-black">
+                    Check Favourites
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

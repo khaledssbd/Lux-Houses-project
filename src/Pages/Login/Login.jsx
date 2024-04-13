@@ -120,7 +120,7 @@ const Login = () => {
               onClick={() => {
                 socialSignIn(githubProvider);
               }}
-              className="btn btn-outline bg-green-400"
+              className="btn btn-outline bg-blue-600 text-white"
             >
               <FaGithub /> Github
             </button>
@@ -128,7 +128,7 @@ const Login = () => {
               onClick={() => {
                 socialSignIn(twitterProvider);
               }}
-              className="btn btn-outline bg-green-400"
+              className="btn btn-outline bg-blue-600 text-white"
             >
               <FaTwitter /> Twitter
             </button>
