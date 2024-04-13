@@ -42,32 +42,39 @@ const Register = () => {
     setPassError('');
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setEmailError('Must use a valid email address..');
+      setEmailError('Must use a valid email address');
       return;
     }
 
     if (!/[A-Z]/.test(password)) {
-      setPassError('Password must have at least one Uppercase letter..');
+      setPassError('Password must have at least one Uppercase letter');
       return;
     }
 
     if (!/[a-z]/.test(password)) {
-      setPassError('Password must have at least one Lowercase letter..');
+      setPassError('Password must have at least one Lowercase letter');
+      return;
+    }
+
+    if (!/[@#%^&*]/.test(password)) {
+      setPassError(
+        'Password must have at least one special character like @,#,%,^,&,*'
+      );
       return;
     }
 
     if (!/\d{2,}/.test(password)) {
-      setPassError('Password must have at least 2 numbers..');
+      setPassError('Password must have at least 2 numbers');
       return;
     }
 
     if (password.length < 8) {
-      setPassError('Password must be of at least 8 characters..');
+      setPassError('Password must be of at least 8 characters');
       return;
     }
 
     if (password !== confirmPassword) {
-      setPassError("Password didn't match..");
+      setPassError("Password and Confirm Password didn't match..");
       return;
     }
 
