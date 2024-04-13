@@ -18,6 +18,7 @@
 - Regex with Valid email
 - Regex with Uppercase letters, lowercase letters, special characters and 8 characters in password
 - User Profile view and Update page separately
+- Local Storage configuration with Protected route (name: Favourite Houses)
 - Adaptable & Robust
 
 # npm Packages for challenge:
