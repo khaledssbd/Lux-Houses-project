@@ -101,9 +101,11 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn -ml-6 sm:-ml-0 btn-ghost text-amber-600 hover:text-white hover:bg-blue-600 text-lg sm:text-xl md:text-3xl font-bold"
+          className="btn -ml-6 sm:-ml-0 btn-ghost text-amber-600 hover:bg-red-500 hover:text-black text-lg sm:text-xl md:text-3xl font-bold"
         >
-          Lux <span className="text-primary hover:text-white">Houzez</span>
+          <button>
+            Lux<span className="text-primary">Houzez</span>
+          </button>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

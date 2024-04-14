@@ -10,14 +10,16 @@ const Footer = () => {
             className="btn btn-ghost hover:bg-red-500 text-amber-600 hover:text-black text-2xl md:text-4xl font-extrabold mb-4"
             data-aos="flip-up"
           >
-            Lux <span className="text-primary">Houzez</span>
+            <button>
+              Lux<span className="text-primary">Houzez</span>
+            </button>
           </Link>
           <p
             className="text-[#FFFFFFCC] text-base md:text-lg font-normal"
             data-aos="zoom-out-right"
           >
-            Lux Houzez is a digital platform where you <br /> get your desired
-            house.
+            LuxHouzez is a digital platform where you <br /> get your desired
+            houses.
           </p>
         </div>
         <div className="flex flex-col items-center">
@@ -39,7 +41,7 @@ const Footer = () => {
       <div className="mt-8 flex justify-between items-center">
         <div>
           <h5 className="text-[#FFFFFFB2] hidden sm:flex font-normal">
-            Copyright © 2024 - All right reserved by Lux Houzez
+            Copyright © 2024 - All right reserved by LuxHouzez
           </h5>
         </div>
         <div className="flex gap-8">
@@ -62,7 +64,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-center mt-5">
         <h5 className="text-[#FFFFFFB2] flex sm:hidden font-normal text-sm md:text-sm">
-          Copyright © 2024 - All right reserved by Lux Houzez
+          Copyright © 2024 - All right reserved by LuxHouzez
         </h5>
       </div>
     </footer>

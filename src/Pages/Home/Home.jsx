@@ -12,7 +12,7 @@ const Home = () => {
        return (
          <div>
            <Helmet>
-             <title>Lux Houzez | Home</title>
+             <title>LuxHouzez | Home</title>
            </Helmet>
            <CarouselAni allHouses={allHouses}></CarouselAni>
            <Hero />

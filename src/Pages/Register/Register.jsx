@@ -111,7 +111,7 @@ const Register = () => {
   return (
     <div className="mb-5 md:mb-10">
       <Helmet>
-        <title>Lux Houzez | Register</title>
+        <title>LuxHouzez | Register</title>
       </Helmet>
       <h2 className="text-xl sm:text-2xl md:text-3xl font-medium my-6 text-center">
         Please Register

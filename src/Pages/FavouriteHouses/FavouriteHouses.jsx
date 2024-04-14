@@ -98,35 +98,37 @@ const FavouriteHouses = () => {
   return (
     <div className="mb-5 md:mb-10">
       <Helmet>
-        <title>Lux Houzez | Favourites</title>
+        <title>LuxHouzez | Favourites</title>
       </Helmet>
       <h3 className="text-xl sm:text-2xl md:text-3xl my-10 text-center">
         Favourite Houses ({showHouses.length})
       </h3>
-      <div className="dropdown mb-5 lg:mb-14">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn m-1 text-white text-sm lg:text-lg font-semibold py-1 lg:py-2 px-2 lg:px-5 rounded-lg bg-[#23BE0A] hover:bg-slate-800"
-        >
-          Sort By <span className="text-sm">(Ascending)</span>{' '}
-          <RiArrowDropDownLine />
+      {totalPrice > 0 && (
+        <div className="dropdown mb-5 lg:mb-14">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1 text-white text-sm lg:text-lg font-semibold py-1 lg:py-2 px-2 lg:px-5 rounded-lg bg-[#23BE0A] hover:bg-slate-800"
+          >
+            Sort By <span className="text-sm">(Ascending)</span>{' '}
+            <RiArrowDropDownLine />
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li onClick={sortByTitle}>
+              <a>Title</a>
+            </li>
+            <li onClick={sortByType}>
+              <a>Type</a>
+            </li>
+            <li onClick={sortByPrice}>
+              <a>Price</a>
+            </li>
+          </ul>
         </div>
-        <ul
-          tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          <li onClick={sortByTitle}>
-            <a>Title</a>
-          </li>
-          <li onClick={sortByType}>
-            <a>Type</a>
-          </li>
-          <li onClick={sortByPrice}>
-            <a>Price</a>
-          </li>
-        </ul>
-      </div>
+      )}
       <div className="w-4/5 md:w-3/4 lg:w-1/2 mx-auto space-y-5">
         {showHouses.map((house, i) => (
           <div

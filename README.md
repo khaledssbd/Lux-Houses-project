@@ -1,11 +1,11 @@
-# Lux Houzez
+# LuxHouzez
 
 ## Live site:
 
-- Click here- [Lux Houzez on firebase](https://lux-houses.web.app/)
-- Click here- [Lux Houzez on vercel](https://ph-a9-by-khaled.vercel.app/)
-- Click here- [Lux Houzez on surge](https://ph-a9-by-khaled.surge.sh/)
-- Click here- [Lux Houzez on netlify](https://ph-a9-by-khaled.netlify.app/)
+- Click here- [LuxHouzez on firebase](https://lux-houses.web.app/)
+- Click here- [LuxHouzez on vercel](https://ph-a9-by-khaled.vercel.app/)
+- Click here- [LuxHouzez on surge](https://ph-a9-by-khaled.surge.sh/)
+- Click here- [LuxHouzez on netlify](https://ph-a9-by-khaled.netlify.app/)
 
 # Features:
 

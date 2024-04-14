@@ -53,7 +53,7 @@ const Login = () => {
   return (
     <div className="mb-5 md:mb-10">
       <Helmet>
-        <title>Lux Houzez | Login</title>
+        <title>LuxHouzez | Login</title>
       </Helmet>
       <h2 className="text-xl sm:text-2xl md:text-3xl font-medium my-10 text-center">
         Please Login

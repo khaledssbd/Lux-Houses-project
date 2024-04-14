@@ -10,7 +10,7 @@ const UserProfile = () => {
   return (
     <div className="mb-10">
       <Helmet>
-        <title>Lux Houzez | User Profile</title>
+        <title>LuxHouzez | User Profile</title>
       </Helmet>
       <h2 className="text-xl sm:text-2xl mt-10 mb-5 text-center font-bold">
         Your Profile

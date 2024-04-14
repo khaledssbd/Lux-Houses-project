@@ -38,7 +38,7 @@ const HouseDetail = () => {
   return (
     <div className="my-6 md:my-11">
       <Helmet>
-        <title>Lux Houzez | House Details: {Id}</title>
+        <title>LuxHouzez | House Details: {Id}</title>
       </Helmet>
       <div className="flex justify-center items-center mb-5 md:mb-10">
         <img className="h-1/2 rounded-xl" src={image} alt="" />

@@ -17,7 +17,7 @@ const Hero = () => {
     >
       <img className="w-20 mb-8" src={luxSvg} alt="" data-aos="zoom-in-up" />
       <h3 className="text-xl md:text-4xl font-black my-5 bg-gradient-to-r from-primary via-blue-600 to-secondary bg-300% text-transparent bg-clip-text animate-gradient">
-        Lux Houzez
+        LuxHouzez
       </h3>
       <h3
         className="text-xl font-bold md:text-4xl bg-gradient-to-r from-primary via-green-600 to-secondary bg-300% text-transparent bg-clip-text animate-gradient"
