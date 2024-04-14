@@ -172,7 +172,7 @@ const Navbar = () => {
 
             <button
               onClick={handleLogOut}
-              className="btn btn-outline bg-blue-600 hover:bg-red-600 text-white mx-3"
+              className="btn btn-outline bg-blue-600 hover:bg-red-600 text-white ml-2"
             >
               Log Out
             </button>
@@ -185,7 +185,7 @@ const Navbar = () => {
               </button>
             </Link>
             <Link to="/register">
-              <button className="btn btn-outline bg-blue-600 hover:bg-black text-white hidden sm:flex mx-3">
+              <button className="btn btn-outline bg-blue-600 hover:bg-black text-white hidden sm:flex ml-2">
                 Register
               </button>
             </Link>
