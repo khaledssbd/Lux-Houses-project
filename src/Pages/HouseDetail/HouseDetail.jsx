@@ -104,15 +104,18 @@ const HouseDetail = () => {
                 </h3>
               </div>
             </div>
-            <div className="mt-5">
-              {!showCheckOut ? (
-                <button
-                  onClick={() => makeItFavourite(Id)}
-                  className="btn text-xs md:text-sm bg-green-600 text-white hover:bg-green-500 hover:text-black"
-                >
-                  Add to Favourite
-                </button>
-              ) : (
+            <div className="flex gap-2 mt-5">
+              <button
+                onClick={() => makeItFavourite(Id)}
+                className={
+                  showCheckOut
+                    ? 'btn text-xs md:text-sm bg-green-300 hover:bg-green-300 text-white hover:text-black'
+                    : 'btn text-xs md:text-sm bg-green-600 hover:bg-green-500 text-white hover:text-black'
+                }
+              >
+                Add to Favourite
+              </button>
+              {showCheckOut && (
                 <Link to="/favourite-houses">
                   <button className="btn text-xs md:text-sm bg-blue-600 text-white hover:bg-red-500 hover:text-black">
                     Check Favourites
@@ -120,6 +123,7 @@ const HouseDetail = () => {
                 </Link>
               )}
             </div>
+            <div className="mt-5"></div>
           </div>
         </div>
       </div>

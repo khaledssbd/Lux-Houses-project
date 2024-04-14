@@ -21,8 +21,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg'
-              : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal'
+              ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg'
+              : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal'
           }
           to="/"
         >
@@ -35,8 +35,8 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg lg:mx-2'
-                  : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal lg:ml-2'
+                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg lg:mx-2'
+                  : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal lg:ml-2'
               }
               to="/favourite-houses"
             >
@@ -47,8 +47,8 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg lg:mx-2'
-                  : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal lg:mx-2'
+                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg lg:mx-2'
+                  : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal lg:mx-2'
               }
               to="/update-profile"
             >
@@ -59,8 +59,8 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'text-[#23BE0A] hover:text-black hover:bg-[#23BE0A] text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-[#23BE0A] rounded-lg'
-                  : 'text-black hover:bg-[#23BE0A] py-1 px-2 text-sm md:text-lg font-normal'
+                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg'
+                  : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal'
               }
               to="/user-profile"
             >
@@ -101,9 +101,9 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="btn -ml-6 sm:-ml-0 btn-ghost text-lg sm:text-xl md:text-3xl font-bold text-[#150B2B]"
+          className="btn -ml-6 sm:-ml-0 btn-ghost text-amber-600 hover:text-white hover:bg-blue-600 text-lg sm:text-xl md:text-3xl font-bold"
         >
-          Lux Houzez
+          Lux <span className="text-primary hover:text-white">Houzez</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -112,25 +112,82 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            {/* <label className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img title={user.displayName} src={user?.photoURL || userImg} />
+                <img
+                  title={
+                    user?.displayName ? user?.displayName : 'No Name Set Yet'
+                  }
+                  src={user?.photoURL || userImg}
+                />
               </div>
-            </label>
+            </label> */}
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="m-1 btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    title={
+                      user?.displayName ? user?.displayName : 'No Name Set Yet'
+                    }
+                    src={user?.photoURL || userImg}
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link
+                    to="/update-profile"
+                    className="hover:bg-blue-500 hover:text-white font-bold"
+                  >
+                    Update Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/user-profile"
+                    className="hover:bg-blue-500 hover:text-white font-bold"
+                  >
+                    User Profile
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="hover:bg-blue-500 hover:text-white font-bold"
+                  >
+                    Log Out
+                  </button>
+                </li>
+              </ul>
+            </div>
 
             <button
               onClick={handleLogOut}
-              className="btn bg-primary text-white hover:bg-green-500 hover:text-black ml-2"
+              className="btn btn-outline bg-blue-600 hover:bg-red-600 text-white mx-3"
             >
               Log Out
             </button>
           </>
         ) : (
-          <Link to="/login">
-            <button className="btn bg-primary text-white hover:bg-green-500 hover:text-black">
-              Login
-            </button>
-          </Link>
+          <>
+            <Link to="/login">
+              <button className="btn btn-outline bg-blue-600 hover:bg-black text-white">
+                Login
+              </button>
+            </Link>
+            <Link to="/register">
+              <button className="btn btn-outline bg-blue-600 hover:bg-black text-white hidden sm:flex mx-3">
+                Register
+              </button>
+            </Link>
+          </>
         )}
       </div>
     </div>

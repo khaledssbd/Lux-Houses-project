@@ -24,11 +24,11 @@ const UpdateProfile = () => {
       <Helmet>
         <title>Lux Houzez | Update Profile</title>
       </Helmet>
-      <h2 className="text-2xl my-10 text-center">Update your Profile</h2>
+      <h2 className="text-xl sm:text-2xl mt-10 mb-5 text-center font-bold">Update your Profile</h2>
       <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto">
         <div className="form-control">
           <label className="label label-text text-base font-semibold">
-            Your Name
+            Name
           </label>
           <input
             type="text"
@@ -41,7 +41,7 @@ const UpdateProfile = () => {
         </div>
         <div className="form-control">
           <label className="label label-text text-base font-semibold mt-5">
-            Your Photo URL
+            Photo URL
           </label>
           <input
             type="text"
@@ -54,7 +54,7 @@ const UpdateProfile = () => {
         </div>
         <div className="form-control">
           <label className="label label-text text-red-500 text-base font-semibold mt-5">
-            Your Email {'(unchangeable)'}{' '}
+            Email {'(unchangeable)'}{' '}
           </label>
           <input
             type="email"
@@ -73,7 +73,10 @@ const UpdateProfile = () => {
 
       <p className="text-center mt-4">
         Want to check your profile?{' '}
-        <Link className="text-blue-600 text-sm font-bold ml-2" to="/user-profile">
+        <Link
+          className="text-blue-600 text-sm font-bold ml-2"
+          to="/user-profile"
+        >
           Click here
         </Link>
       </p>

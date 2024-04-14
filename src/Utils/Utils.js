@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
 
 //get
 export const getFavouriteHouses = () => {
@@ -27,8 +27,7 @@ export const removeFromFavourite = id => {
   let houses = getFavouriteHouses();
   const remaining = houses.filter(b => b !== id);
   localStorage.setItem('luxHouzezFavouriteHouses', JSON.stringify(remaining));
-    toast.success('The house is successfully removed from your favourite list!');
-
+  toast.success('The house is successfully removed from your favourite list!');
 };
 
 // For other use

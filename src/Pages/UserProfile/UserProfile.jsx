@@ -12,16 +12,18 @@ const UserProfile = () => {
       <Helmet>
         <title>Lux Houzez | User Profile</title>
       </Helmet>
-      <h2 className="text-2xl my-10 text-center font-bold">Your Profile</h2>
+      <h2 className="text-xl sm:text-2xl mt-10 mb-5 text-center font-bold">
+        Your Profile
+      </h2>
       <div className=" md:w-3/4 lg:w-1/2 mx-auto">
         <div className="md:pl-20">
           <h4 className="text-base text-left font-medium">
-            Your Name:
+            Name:
             <span className="text-amber-700 ml-2">{user.displayName}</span>
           </h4>
           <div className="flex justify-start gap-10 items-center my-5 md:my-10">
             <h4 className="text-base text-left font-medium">
-              Your Profile Picture:
+              Profile Picture:
             </h4>
             <img
               className="rounded-lg w-20"
@@ -30,7 +32,7 @@ const UserProfile = () => {
             />
           </div>
           <h4 className="text-base text-left font-medium">
-            Your Email:
+            Email:
             <span className="text-amber-700 ml-2">{user.email}</span>
           </h4>
         </div>
@@ -38,7 +40,10 @@ const UserProfile = () => {
 
       <p className="text-center mt-10">
         Want to update your profile?{' '}
-        <Link className="text-blue-600 text-sm font-bold ml-2" to="/update-profile">
+        <Link
+          className="text-blue-600 text-sm font-bold ml-2"
+          to="/update-profile"
+        >
           Click here
         </Link>
       </p>

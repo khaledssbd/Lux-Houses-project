@@ -3,10 +3,10 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import toast from 'react-hot-toast';
+import googleSvg from '../../assets/google.svg';
 import {
   FaFacebook,
   FaGithub,
-  FaGoogle,
   FaTwitter,
   FaEye,
   FaEyeSlash,
@@ -56,7 +56,7 @@ const Register = () => {
       return;
     }
 
-  if (!/[!@#$%^&*=+]/.test(password)) {
+    if (!/[!@#$%^&*=+]/.test(password)) {
       setPassError(
         'Password must have at least one special character like !,@,#,$,%,^,&,*,=,+'
       );
@@ -113,7 +113,9 @@ const Register = () => {
       <Helmet>
         <title>Lux Houzez | Register</title>
       </Helmet>
-      <h2 className="text-3xl my-4 text-center">Please Register</h2>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium my-6 text-center">
+        Please Register
+      </h2>
       <form onSubmit={handleRegister} className=" md:w-3/4 lg:w-1/2 mx-auto">
         <div className="form-control">
           <label className="label label-text">Name</label>
@@ -221,30 +223,23 @@ const Register = () => {
           <div className="flex justify-center gap-4 mb-3">
             <button
               onClick={() => {
+                socialSignIn(googleProvider);
+              }}
+              className="btn btn-outline"
+            >
+              <img className="w-4" src={googleSvg} alt="" />
+              Google
+            </button>
+            <button
+              onClick={() => {
                 socialSignIn(facebookProvider);
               }}
               className="btn btn-outline bg-[#1877F2] text-white"
             >
               <FaFacebook /> Facebook
             </button>
-            <button
-              onClick={() => {
-                socialSignIn(googleProvider);
-              }}
-              className="btn btn-outline bg-[#DB4437] text-white"
-            >
-              <FaGoogle /> Google
-            </button>
           </div>
           <div className="flex justify-center gap-4 mb-3">
-            <button
-              onClick={() => {
-                socialSignIn(githubProvider);
-              }}
-              className="btn btn-outline bg-[#333] hover:bg-[#4078c0] hover:text-black text-white"
-            >
-              <FaGithub /> Github
-            </button>
             <button
               onClick={() => {
                 socialSignIn(twitterProvider);
@@ -252,6 +247,14 @@ const Register = () => {
               className="btn btn-outline bg-[#1DA1F2] text-white"
             >
               <FaTwitter /> Twitter
+            </button>
+            <button
+              onClick={() => {
+                socialSignIn(githubProvider);
+              }}
+              className="btn btn-outline bg-[#333] hover:bg-[#4078c0] text-white"
+            >
+              <FaGithub /> Github
             </button>
           </div>
         </div>

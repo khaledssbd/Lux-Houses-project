@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getFavouriteHouses, removeFromFavourite } from '../../Utils/Utils';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 const FavouriteHouses = () => {
   const allHouses = useLoaderData();
@@ -26,6 +27,7 @@ const FavouriteHouses = () => {
     setShowHouses(favouriteHouses);
   };
 
+  // useEffect with double dependency
   useEffect(() => {
     setTotalPrice(
       showHouses.reduce((total, house) => {
@@ -43,7 +45,6 @@ const FavouriteHouses = () => {
   }, [showHouses, totalPrice]);
 
   // SINGLE useEffect with single Dependency
-
   // useEffect(() => {
   //   setTotalPrice(
   //     showHouses.reduce((total, house) => {
@@ -63,6 +64,37 @@ const FavouriteHouses = () => {
   //   );
   // }, [totalPrice]);
 
+  const sortHouses = property => {
+    setShowHouses(prevData => {
+      return [...prevData].sort((a, b) => {
+        if (a[property] > b[property]) return 1;
+        if (a[property] < b[property]) return -1;
+        return 0;
+      });
+    });
+  };
+
+  const sortByTitle = () => {
+    sortHouses('estate_title');
+  };
+  const sortByType = () => {
+    sortHouses('segment_name');
+  };
+
+  const removeNonNumericCharacters = str => {
+    return str.replace(/[$,]/g, '');
+  };
+
+  const sortByPrice = () => {
+    setShowHouses(prevData => {
+      return [...prevData].sort((a, b) => {
+        const priceA = parseFloat(removeNonNumericCharacters(a.price));
+        const priceB = parseFloat(removeNonNumericCharacters(b.price));
+        return priceA - priceB;
+      });
+    });
+  };
+
   return (
     <div className="mb-5 md:mb-10">
       <Helmet>
@@ -71,6 +103,30 @@ const FavouriteHouses = () => {
       <h3 className="text-xl sm:text-2xl md:text-3xl my-10 text-center">
         Favourite Houses ({showHouses.length})
       </h3>
+      <div className="dropdown mb-5 lg:mb-14">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn m-1 text-white text-sm lg:text-lg font-semibold py-1 lg:py-2 px-2 lg:px-5 rounded-lg bg-[#23BE0A] hover:bg-slate-800"
+        >
+          Sort By <span className="text-sm">(Ascending)</span>{' '}
+          <RiArrowDropDownLine />
+        </div>
+        <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li onClick={sortByTitle}>
+            <a>Title</a>
+          </li>
+          <li onClick={sortByType}>
+            <a>Type</a>
+          </li>
+          <li onClick={sortByPrice}>
+            <a>Price</a>
+          </li>
+        </ul>
+      </div>
       <div className="w-4/5 md:w-3/4 lg:w-1/2 mx-auto space-y-5">
         {showHouses.map((house, i) => (
           <div
@@ -97,12 +153,19 @@ const FavouriteHouses = () => {
                 Price: {house.price}
               </h3>
             </div>
-            <button
-              onClick={() => remove(house.estate_id)}
-              className="btn btn-outline bg-red-500"
-            >
-              Remove
-            </button>
+            <div className="flex flex-row md:flex-col gap-4 md:gap-8">
+              <Link to={`/house/${house.estate_id}`}>
+                <button className="btn btn-outline text-white hover:bg-amber-700 bg-primary rounded-lg p-2">
+                  View Property
+                </button>
+              </Link>
+              <button
+                onClick={() => remove(house.estate_id)}
+                className="btn btn-outline bg-red-500 rounded-lg p-2"
+              >
+                Remove
+              </button>
+            </div>
           </div>
         ))}
         <div className="text-end">

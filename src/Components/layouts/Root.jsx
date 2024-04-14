@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 const Root = () => {
   useEffect(() => {
-    AOS.init({duration: "1000"});
+    AOS.init({ duration: '1000' });
   }, []);
   return (
     <div>
@@ -18,7 +18,7 @@ const Root = () => {
         <div>
           <Navbar />
         </div>
-        <div className="min-h-[calc(100vh-230px)]">
+        <div className="min-h-[calc(100vh-468px)]">
           <Outlet />
         </div>
       </div>

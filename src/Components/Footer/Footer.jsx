@@ -7,10 +7,10 @@ const Footer = () => {
         <div className="mb-12 text-start">
           <Link
             to="/"
-            className="btn btn-ghost hover:bg-slate-600 text-white text-2xl md:text-4xl font-extrabold mb-4"
+            className="btn btn-ghost hover:bg-red-500 text-amber-600 hover:text-black text-2xl md:text-4xl font-extrabold mb-4"
             data-aos="flip-up"
           >
-            Lux Houzez
+            Lux <span className="text-primary">Houzez</span>
           </Link>
           <p
             className="text-[#FFFFFFCC] text-base md:text-lg font-normal"
