@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import downloadImg from '../../assets/play.png';
 const Footer = () => {
   return (
-    <footer className="mt-30 bg-[#030712] py-10 px-5 md:px-20">
+    <footer className="mt-30 bg-[#030712] py-5 md:py-10 px-5 md:px-20">
       <div className="flex justify-between items-center">
         <div className="mb-12 text-start">
           <Link

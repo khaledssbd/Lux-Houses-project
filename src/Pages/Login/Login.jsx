@@ -105,7 +105,7 @@ const Login = () => {
               onClick={() => {
                 socialSignIn(googleProvider);
               }}
-              className="btn btn-outline"
+              className="btn btn-outline w-[116px]"
             >
               <img className="w-4" src={googleSvg} alt="" />
               Google
@@ -114,7 +114,7 @@ const Login = () => {
               onClick={() => {
                 socialSignIn(facebookProvider);
               }}
-              className="btn btn-outline bg-[#1877F2] text-white"
+              className="btn btn-outline bg-[#1877F2] text-white w-[116px]"
             >
               <FaFacebook /> Facebook
             </button>
@@ -124,7 +124,7 @@ const Login = () => {
               onClick={() => {
                 socialSignIn(twitterProvider);
               }}
-              className="btn btn-outline bg-[#1DA1F2] text-white"
+              className="btn btn-outline bg-[#1DA1F2] text-white w-[116px]"
             >
               <FaTwitter /> Twitter
             </button>
@@ -132,7 +132,7 @@ const Login = () => {
               onClick={() => {
                 socialSignIn(githubProvider);
               }}
-              className="btn btn-outline bg-[#333] hover:bg-[#4078c0] text-white"
+              className="btn btn-outline bg-[#333] hover:bg-[#4078c0] text-white w-[116px]"
             >
               <FaGithub /> Github
             </button>
