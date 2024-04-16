@@ -20,8 +20,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg'
-              : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal'
+              ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-xs lg:text-lg font-normal lg:font-semibold py-1 px-1 border-2 border-blue-600 rounded-lg'
+              : 'hover:text-white hover:bg-blue-600 py-1 px-1 text-xs lg:text-lg font-normal'
           }
           to="/"
         >
@@ -34,8 +34,8 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg lg:mx-2'
-                  : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal lg:ml-2'
+                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-xs lg:text-lg font-normal lg:font-semibold py-1 px-1 border-2 border-blue-600 rounded-lg lg:mx-2'
+                  : 'hover:text-white hover:bg-blue-600 py-1 px-1 text-xs lg:text-lg font-normal lg:mx-1'
               }
               to="/favourite-houses"
             >
@@ -46,8 +46,8 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg lg:mx-2'
-                  : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal lg:mx-2'
+                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-xs lg:text-lg font-normal lg:font-semibold py-1 px-1 border-2 border-blue-600 rounded-lg'
+                  : 'hover:text-white hover:bg-blue-600 py-1 px-1 text-xs lg:text-lg font-normal'
               }
               to="/update-profile"
             >
@@ -58,8 +58,8 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-sm md:text-lg font-normal md:font-semibold py-1 px-2 border-2 border-blue-600 rounded-lg'
-                  : 'hover:text-white hover:bg-blue-600 py-1 px-2 text-sm md:text-lg font-normal'
+                  ? 'text-blue-600 hover:text-white hover:bg-blue-600 text-xs lg:text-lg font-normal lg:font-semibold py-1 px-1 border-2 border-blue-600 rounded-lg md:ml-2'
+                  : 'hover:text-white hover:bg-blue-600 py-1 px-1 text-xs lg:text-lg font-normal md:ml-1'
               }
               to="/user-profile"
             >

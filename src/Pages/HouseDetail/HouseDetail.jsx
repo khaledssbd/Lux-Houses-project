@@ -40,11 +40,11 @@ const HouseDetail = () => {
       <Helmet>
         <title>LuxHouzez | House Details: {Id}</title>
       </Helmet>
-      <div className="flex justify-center items-center mb-5 md:mb-10">
+      <div className="flex justify-center items-center mb-5 md:mb-10 animate__animated animate__backInUp">
         <img className="h-1/2 rounded-xl" src={image} alt="" />
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-        <div className="col-span-3 flex flex-col gap-5 animate__animated animate__rubberBand">
+        <div className="col-span-3 flex flex-col gap-5 animate__animated animate__backInUp">
           <h3 className="text-[#131313] text-start font-play text-[20px] md:text-[40px] font-bold">
             {estate_title}
           </h3>
@@ -71,7 +71,7 @@ const HouseDetail = () => {
           </h3>
         </div>
 
-        <div className="animate__animated animate__heartBeat min-w-56">
+        <div className="animate__animated animate__backInUp min-w-56">
           <div className="lg:mt-28 ml-4 flex flex-col mb-6">
             <h3 className="text-start text-[#A58A56] text-base font-medium mb-2">
               Facilities:

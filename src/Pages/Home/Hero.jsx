@@ -16,7 +16,10 @@ const Hero = () => {
       className="mt-16 mb-10 h-[500px] w-auto rounded-3xl py-20 md:mb-[100px] md:h-[600px] md:p-[130px] flex flex-col items-center"
     >
       <img className="w-20 mb-8" src={luxSvg} alt="" data-aos="zoom-in-up" />
-      <h3 className="text-xl md:text-4xl font-black my-5 bg-gradient-to-r from-primary via-blue-600 to-secondary bg-300% text-transparent bg-clip-text animate-gradient">
+      <h3
+        className="text-xl md:text-4xl font-black my-5 bg-gradient-to-r from-primary via-blue-600 to-secondary bg-300% text-transparent bg-clip-text animate-gradient"
+        data-aos="zoom-in-up"
+      >
         LuxHouzez
       </h3>
       <h3

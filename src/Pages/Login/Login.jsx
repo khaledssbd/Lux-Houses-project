@@ -45,7 +45,7 @@ const Login = () => {
 
   const socialSignIn = provider => {
     signInWithSocial(provider).then(() => {
-      navigate(location?.state ? location.state : '/');
+      navigate(location?.state ? location.state : '/update-profile');
       toast.success('Successfully signed in');
     });
   };

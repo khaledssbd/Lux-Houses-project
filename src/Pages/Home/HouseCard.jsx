@@ -24,7 +24,7 @@ const HouseCard = ({ aHouse }) => {
           alt=""
         />
       </div>
-      <h3 className="text-[#131313] font-play text-2xl font-bold flex-grow mt-4">
+      <h3 className="text-[#131313] font-play text-base sm:text-xl md:text-2xl font-bold flex-grow mt-4">
         {estate_title}
       </h3>
       <div className="mt-4 ml-5">
