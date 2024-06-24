@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <span className="loading loading-dots loading-lg"></span>;
+    return <span className="loading loading-spinner text-info"></span>;
   }
 
   if (user) {

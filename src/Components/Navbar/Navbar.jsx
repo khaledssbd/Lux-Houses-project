@@ -135,6 +135,8 @@ const Navbar = () => {
                       user?.displayName ? user?.displayName : 'No Name Set Yet'
                     }
                     src={user?.photoURL || userImg}
+                    referrerPolicy="no-referrer"
+                    alt="User Profile Photo"
                   />
                 </div>
               </div>

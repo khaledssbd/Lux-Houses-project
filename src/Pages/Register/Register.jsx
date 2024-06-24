@@ -222,7 +222,7 @@ const Register = () => {
         </div>
       </form>
       <div className="">
-        <h2 className="text-xl mt-10 mb-4">Login With</h2>
+        <h2 className="text-xl mt-10 mb-4">Register With</h2>
         <div className="md:flex justify-center items-center gap-4 ">
           <div className="flex justify-center gap-4 mb-3">
             <button

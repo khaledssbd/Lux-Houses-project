@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
+import Navbar from '../Components/Navbar/Navbar';
+import Footer from '../Components/Footer/Footer';
 import 'animate.css';
 // npm install animate.css --save
 import AOS from 'aos';
@@ -14,6 +14,7 @@ const Root = () => {
   }, []);
   return (
     <div>
+      <ScrollRestoration />
       <div className="lg:mx-28 md:20 sm:mx-5 mx-3 md:mt-8 mt-4">
         <div>
           <Navbar />
